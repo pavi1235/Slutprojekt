@@ -4,55 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
 <body>
+  <div class="rubrik">
+        <h1>Betygskriterier i Samhällskunskap</h1>
     
- <div class="system-val">
-  <label>Vilken läroplan följer du?</label>
-  <select id="systemVal" onchange="bytSystem()">
-    <option value="">-- Välj system --</option>
-    <option value="gy11">Gy11 (Gamla )</option>
-    <option value="gy25">Gy25 (Nya )</option>
-  </select>
+<div class="val-box">
+    <label>Vilken läroplan följer du?</label>
+    <select id="systemVal" onchange="bytSystem()">
+        <option value="">-- Välj system --</option>
+        <option value="gy11">Gy11 (Gamla)</option>
+        <option value="gy25">Gy25 (Nya)</option>
+    </select>
 </div>
 
-   
-   
-   
-    <div id="valavkurs-gy11"class="gömmd">
-  <label>Välj din kurs:</label>
-  <select id="kursVal-gy11" onchange="rensaDisplay()">
-    <option value="">-- Välj kurs --</option>
-    <option value="sam1a1">Samhällskunskap 1a1</option>
-    <option value="sam1a2">Samhällskunskap 1a2</option>
-    <option value="sam1b">Samhällskunskap 1b</option>
-    <option value="sam2">Samhällskunskap 2</option>
-    <option value="sam3">Samhällskunskap 3</option>
-  </select>
+<div id="kurs-sektion" class="gömd">
+    <hr> <h2 id="dynamisk-rubrik">Välj din kurs</h2> 
+    
+    <div id="valavkurs-gy11" class="gömd">
+        <select id="kursVal-gy11" onchange="visaKnappar()">
+            <option value="">-- Välj Gy11-kurs --</option>
+            <option value="sam1b">Samhällskunskap 1b</option>
+            <option value="sam2">Samhällskunskap 2</option>
+        </select>
     </div>
-  <div id="valavkurs-gy25" class="gömmd">
-  <label>Välj din kurs:</label>
-  <select id="kursVal-gy25" onchange="rensaDisplay()">
-    <option value="">-- Välj kurs --</option>
-    <option value="sam1a1">Samhällskunskap nivå 1a1</option>
-    <option value="sam1a2">Samhällskunskap nivå 1a2</option>
-    <option value="sam1b">Samhällskunskap nivå  1b</option>
-    <option value="sam2">Samhällskunskap nivå 2</option>
-    <option value="sam3">Samhällskunskap nivå  3</option>
-  </select>
-  </div>
- 
- 
-  <div class="betygs-val">
-    <button class="btn e" onclick="visaKrav('E')">E</button>
-    <button class="btn c" onclick="visaKrav('C')">C</button>
-    <button class="btn a" onclick="visaKrav('A')">A</button>
-  </div>
-   <div id="display" class="info-ruta">
-    <h3 id="valtBetygTitle">Välj kurs och betyg ovan</h3>
-    <p id="kravBeskrivning"></p>
-  </div>
+
+    <div id="valavkurs-gy25" class="gömd">
+        <select id="kursVal-gy25" onchange="visaKnappar()">
+            <option value="">-- Välj Gy25-nivå --</option>
+            <option value="sam_n1">Samhällskunskap nivå 1</option>
+            <option value="sam_n2">Samhällskunskap nivå 2</option>
+        </select>
+    </div>
 </div>
-<script src="script.js"></script>
-</body>
+
+<div id="betyg-sektion" class="gömd">
+    <h3>Välj betyg för att se krav</h3>
+    <div class="betygs-val">
+        <button class="btn e" onclick="visaKrav('E')">E</button>
+        <button class="btn c" onclick="visaKrav('C')">C</button>
+        <button class="btn a" onclick="visaKrav('A')">A</button>
+    </div>
+</div>
 </html>
