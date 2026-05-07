@@ -73,12 +73,18 @@ document.addEventListener('DOMContentLoaded', () => {
         if (v === 'gy11') {
             valavkursGy11.classList.remove('gömd');
             valavkursGy25.classList.add('gömd');
-            dynamiskRubrik.textContent = 'Välj din kurs (Gy11)';
+           
+            if (dynamiskRubrik) {
+    dynamiskRubrik.textContent = 'Välj din kurs (Gy11)';
+}
         } else {
             valavkursGy25.classList.remove('gömd');
             valavkursGy11.classList.add('gömd');
-            dynamiskRubrik.textContent = 'Välj din nivå (Gy25)';
+        
         }
+        if (dynamiskRubrik) {
+    dynamiskRubrik.textContent = 'Välj din kurs (Gy25)';
+}
 
         betygSektion.classList.add('gömd'); // visa först när kurs valts
     };
@@ -109,7 +115,8 @@ document.addEventListener('DOMContentLoaded', () => {
             sam1b: 'Samhällskunskap 1b',
             sam2: 'Samhällskunskap 2',
             sam_n1: 'Samhällskunskap nivå 1',
-            sam_n2: 'Samhällskunskap nivå 2'
+            sam_n2: 'Samhällskunskap nivå 2',
+            sam_n3: 'Samhällskunskap nivå 3'
         };
         return map[key] || key;
     }
