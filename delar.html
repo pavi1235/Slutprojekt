@@ -3,11 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>DocuSment</title>
     <link rel="stylesheet" href="style.css">
   </head>
 
 <body>
+
+   <nav>
+        <ul>
+            <li><a href="index.html">Huvudsidan</a></li>
+            <li><a href="om-ämnet.html">Om mitt favorit ämne</a></li>
+            <li><a href="innehåll.html">Kurserna</a></li>
+            <li><a href="Delar.html">Det centrala delarna  </a></li>
+        </ul>
+    </nav>
   <div class="rubrik">
         <h1>Betygskriterier i Samhällskunskap</h1>
     
@@ -21,11 +30,13 @@
 </div>
 
 <div id="kurs-sektion" class="gömd">
-    <hr> <h2 id="rubrik+2">Välj din kurs</h2> 
+    <hr> <h2 id="rubrik">Välj din kurs</h2> 
     
     <div id="valavkurs-gy11" class="gömd">
         <select id="kursVal-gy11" onchange="visaKnappar()">
             <option value="">-- Välj Gy11-kurs --</option>
+            <option value="sam1a1">Samhällskunskap 1a1</option>
+            <option value="sam1a2">Samhällskunskap 1a2</option>
             <option value="sam1b">Samhällskunskap 1b</option>
             <option value="sam2">Samhällskunskap 2</option>
                 <option value="sam3">Samhällskunskap 3</option>
@@ -50,6 +61,6 @@
         <button class="btn a" onclick="visaKrav('A')">A</button>
     </div>
 </div>
-<script src="scripts.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

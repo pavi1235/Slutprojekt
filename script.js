@@ -20,6 +20,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const kriterier = {
+
+        sam1a1: {
+            E: 'Sam1a1 E: Grundläggande kunskaper och förståelse.',
+            C: 'Sam1a1 C: God förmåga att analysera och förklara.',
+            A: 'Sam1a1 A: Mycket god förmåga och självständigt resonemang.'
+        },
+        sam1a2: {
+            E: 'Sam1a2 E: Grundläggande kunskaper och förståelse.',
+            C: 'Sam1a2 C: God förmåga att analysera och förklara.',
+            A: 'Sam1a2 A: Mycket god förmåga och självständigt resonemang.'
+        },
         sam1b: {
             E: 'Sam1b E: Grundläggande kunskaper och förståelse.',
             C: 'Sam1b C: God förmåga att analysera och förklara.',
@@ -63,32 +74,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (!v) {
             kursSektion.classList.add('gömd');
-            valavkursGy11.classList.add('gömd');
-            valavkursGy25.classList.add('gömd');
             betygSektion.classList.add('gömd');
             return;
         }
 
         kursSektion.classList.remove('gömd');
-        if (v === 'gy11') {
-            valavkursGy11.classList.remove('gömd');
-            valavkursGy25.classList.add('gömd');
-           
-            if (dynamiskRubrik) {
-    dynamiskRubrik.textContent = 'Välj din kurs (Gy11)';
-}
-        } else {
-            valavkursGy25.classList.remove('gömd');
-            valavkursGy11.classList.add('gömd');
-        
-        }
-        if (dynamiskRubrik) {
-    dynamiskRubrik.textContent = 'Välj din kurs (Gy25)';
-}
+       if (v === 'gy11') {
+        valavkursGy11.classList.remove('gömd');
+        valavkursGy25.classList.add('gömd');
+        if (dynamiskRubrik) dynamiskRubrik.textContent = 'Välj din kurs (Gy11)';
+    } else if (v === 'gy25') {
+        valavkursGy25.classList.remove('gömd');
+        valavkursGy11.classList.add('gömd');
+        if (dynamiskRubrik) dynamiskRubrik.textContent = 'Välj din kurs (Gy25)';
+    }
 
-        betygSektion.classList.add('gömd'); // visa först när kurs valts
-    };
-
+    betygSektion.classList.add('gömd'); 
+};
     window.visaKnappar = function visaKnappar() {
         const kurs = getSelectedCourse();
         kravContainer.innerHTML = '';
@@ -112,6 +114,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function getCourseLabel(key) {
         const map = {
+            sam1a1: 'Samhällskunskap 1a1',
+            sam1a2: 'Samhällskunskap 1a2',
             sam1b: 'Samhällskunskap 1b',
             sam2: 'Samhällskunskap 2',
             sam_n1: 'Samhällskunskap nivå 1',
